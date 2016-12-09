@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rectangle Area</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div class="widthRect" id="widthRect">
+			<ul class="widthArea" id="widthArea">
+				<li>width</li>
+				<li>3</li>
+				<li>2.5</li>
+				<li>5</li>
+			</ul>
+		</div>
+
+		<div class='heightRect'>
+			<ul class="heightArea" id="heightArea">
+				<li>height</li>
+				<li>4</li>
+				<li>3</li>
+				<li>5</li>
+			</ul>
+		</div>
+
+		<div class="resultArea">
+			<ul id="resultArea">
+				<li>area</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var lisWidth = document.getElementById("widthArea").getElementsByTagName("li")
+		var lisHeight = document.getElementById('heightArea').getElementsByTagName('li');
+		var d = document.getElementById('resultArea');
+
+		var	widthLength = lisWidth.length;
+		var heightLength = lisHeight.length;
+		var ul = document.getElementById('resultArea');
+
+	function areaCalculate(w,h) {
+	
+	   d = w * h;
+	   return(d)
+	};
+
+	for(var i = 1, j = 1; i < widthLength; i++, j++)
+	{
+		var li = document.createElement("li");
+
+		li.appendChild(document.createTextNode(areaCalculate(lisWidth[i].innerText,lisHeight[j].innerText)));
+		ul.appendChild(li);
+}
+	</script>
+</body>
+</html>

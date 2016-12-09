@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Odd and Even</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div class="number-col" id="number-col">
+			<ul class="checkNumber" id="checkNumber">
+				<li>n</li>
+				<li id="number-three">3</li>
+				<li id="number-two">2</li>
+				<li id="number-minusTwo">-2</li>
+				<li id="number-minusOne">-1</li>
+				<li id="number-zero">0</li>
+			</ul>
+		</div>
+
+		<div class='odd-col'>
+			<ul class="checkOdd" id="checkOdd">
+				<li>Odd?</li>
+			</ul>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		var lis = document.getElementById("checkNumber").getElementsByTagName("li")
+		var	lisLength = lis.length;
+		var ul = document.getElementById('checkOdd');
+
+	function isOdd(number) {
+	    if (number % 2 == 0){
+	       return(false);
+	    }
+	    else{
+	       return(true);    
+	    }
+	};
+
+	for(var i = 1; i < lisLength; i++)
+	{
+		var li = document.createElement("li");
+
+		li.appendChild(document.createTextNode(isOdd(lis[i].innerText)));
+		ul.appendChild(li);
+}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Third digit</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div class="number-col" id="number-col">
+			<ul class="numbersSeven" id="numbersSeven">
+				<li>n</li>
+				<li>5</li>
+				<li>701</li>
+				<li>1732</li>
+				<li>9703</li>
+				<li>877</li>
+				<li>777677</li>
+				<li>9999799</li>
+			</ul>
+		</div>
+
+		<div class='thirdDigit'>
+			<ul class="third-digit" id="third-digit">
+				<li>Third digit 7</li>
+			</ul>
+		</div>
+
+		
+	</div>
+	<script type="text/javascript">
+		var lisNumber = document.getElementById("numbersSeven").getElementsByTagName("li");
+		var	numberLength = lisNumber.length;
+		var ul = document.getElementById('third-digit');
+
+	function thirdDigit(number) {
+	var p = ((number / 100) % 10 ) | 0;
+	if (p == 7){
+
+		return(true);
+	}
+	else{
+		return(false);
+	}
+	}
+
+	for(var i = 1; i < numberLength; i++)
+	{	
+		var li = document.createElement("li");
+
+		li.appendChild(document.createTextNode(thirdDigit(lisNumber[i].innerText)));
+		ul.appendChild(li);
+}
+	</script>
+</body>
+</html>

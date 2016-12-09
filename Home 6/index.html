@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Third Bit</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div class="number-col" id="number-col">
+			<ul class="numbersBinary" id="numbersBinary">
+				<li>n</li>
+				<li>5</li>
+				<li>8</li>
+				<li>0</li>
+				<li>15</li>
+				<li>5343</li>
+				<li>62241</li>
+			</ul>
+		</div>
+
+		<div class='binaryCount'>
+			<ul class="binary-digit" id="binary-digit">
+				<li>binary representation</li>
+			</ul>
+		</div>
+
+		<div class="bit-third">
+			<ul class = "thirdBit" id = "thirdBit">
+				<li>bit #3</li>
+			</ul>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		var lisNumber = document.getElementById("numbersBinary").getElementsByTagName("li");
+		var	numberLength = lisNumber.length;
+		var ulBinary = document.getElementById('binary-digit');
+		var ulBit = document.getElementById('thirdBit');
+
+			function createBinaryString (nMask) {
+		  // nMask must be between -2147483648 and 2147483647
+		  for (var nFlag = 0, nShifted = nMask, sMask = ""; nFlag < 32;
+		       nFlag++, sMask += String(nShifted >>> 31), nShifted <<= 1);
+		  return sMask.substring(16,32);
+		}
+
+	
+
+	for(var i = 1; i < numberLength; i++)
+	{	
+		var li = document.createElement("li");
+
+		li.appendChild(document.createTextNode(createBinaryString(lisNumber[i].innerText)));
+		ulBinary.appendChild(li);
+}
+
+	function forthBit(binaryString) { 
+			var bstring =( binaryString >>> 2)&1;
+
+			return(bstring);
+}
+
+var binaryNumber = document.getElementById("binary-digit").getElementsByTagName("li");
+var binaryNumLen = binaryNumber.length;
+alert(binaryNumber[1]);
+
+for(var j = 1; j < binaryNumLen; j++)
+{
+
+	var li = document.createElement("li");
+
+
+	li.appendChild(document.createTextNode(forthBit(binaryNumber[j].innerText)));
+	ulBit.appendChild(li);
+}
+
+	</script>
+</body>
+</html>

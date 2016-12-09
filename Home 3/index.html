@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Odd and Even</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div class="number-col" id="number-col">
+			<ul class="checkNumber" id="checkNumber">
+				<li>n</li>
+				<li>3</li>
+				<li>0</li>
+				<li>5</li>
+				<li>7</li>
+				<li>35</li>
+				<li>140</li>
+			</ul>
+		</div>
+
+		<div class='odd-col'>
+			<ul class="checkOdd" id="checkOdd">
+				<li>Divided by 7 and 5?</li>
+			</ul>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		var lis = document.getElementById("checkNumber").getElementsByTagName("li")
+		var	lisLength = lis.length;
+		var ul = document.getElementById('checkOdd');
+
+	function divided(number) {
+	    if ((number % 7 == 0 ) && (number % 5 == 0)){
+	       return(true);
+	    }
+	    else{
+	       return(false);    
+	    }
+	};
+
+	for(var i = 1; i < lisLength; i++)
+	{
+		var li = document.createElement("li");
+
+		li.appendChild(document.createTextNode(divided(lis[i].innerText)));
+		ul.appendChild(li);
+}
+	</script>
+</body>
+</html>
